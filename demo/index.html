@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Juno</title>
+  <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+
+<body>
+  <div id="particles-js">
+    <div class="container">
+      <!-- header -->
+      <h1>Juno</h1>
+      
+      <!-- socials -->
+      <div class="socials">
+        <a href="https://github.com/izzy-q/" id="github" class="socials" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="https://twitter.com/izzywq" id="twitter" class="socials" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+
+        <a href="https://discord.com/users/521872289231273994" class="socials" alt="discord" id="discord" target="_blank">
+          <i class="fab fa-discord"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+      <span id="footer">Juno (c)</span>
+    </div>
+
+  </div>
+
+<!-- particles.js container -->
+<div id="particles-js"></div>
+
+<!-- scripts -->
+<script src="../particles.js"></script>
+<script src="js/app.js"></script>
+
+<!-- stats.js -->
+<script src="js/lib/stats.js"></script>
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+
+</body>
+</html>
